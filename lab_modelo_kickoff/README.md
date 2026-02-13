@@ -1,16 +1,102 @@
-# lab_modelo_kickoff
+Perfeito 👌
+Aqui vai um **resumo claro e estruturado do projeto `lab_mobile_kickoff`**:
 
-A new Flutter project.
+---
 
-## Getting Started
+# 📱 Projeto: lab_mobile_kickoff
 
-This project is a starting point for a Flutter application.
+## 🎯 Objetivo
 
-A few resources to get you started if this is your first Flutter project:
+Criar um aplicativo Flutter inicial utilizando uma **arquitetura organizada em camadas**, com:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+* Tela inicial simples
+* Estrutura separada por responsabilidade
+* Modelo de entidade
+* Repository fake em memória
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+---
+
+# 🏗 Estrutura Arquitetural
+
+O projeto foi dividido em 4 camadas principais:
+
+```
+lib/
+ ├── presentation/  → Interface (UI)
+ ├── application/   → Casos de uso (regra de aplicação)
+ ├── domain/        → Entidades e contratos
+ ├── data/          → Implementações concretas
+```
+
+Essa estrutura segue princípios de organização inspirados em Clean Architecture.
+
+---
+
+# 🧠 Domain (Regras de Negócio)
+
+### 📌 Entidade: Servico
+
+Classe simples contendo:
+
+* `id`
+* `titulo`
+* `descricao`
+
+Representa o modelo central da aplicação.
+
+---
+
+### 📌 Repository (Contrato)
+
+Interface `ServicoRepository` definindo:
+
+* `obterTodos()`
+* `adicionar(servico)`
+
+O domínio conhece apenas o contrato, não a implementação.
+
+---
+
+# 💾 Data (Fonte de Dados)
+
+### 📌 ServicoRepositoryFake
+
+* Implementa o contrato do domínio
+* Usa uma lista em memória
+* Começa vazia
+* Simula um banco de dados
+
+Ideal para fase inicial e testes.
+
+---
+
+# 🎨 Presentation (Interface)
+
+### 📌 HomePage
+
+* Tela inicial simples
+* AppBar com título **"AonDas"**
+* Texto central de boas-vindas
+
+---
+
+# 🚀 Estado Atual do Projeto
+
+✔ Projeto criado com Flutter
+✔ Arquitetura organizada
+✔ Entidade definida
+✔ Repository abstrato
+✔ Implementação fake
+✔ Tela inicial funcional
+
+---
+
+# 📌 Conceito Principal Aprendido
+
+Separação de responsabilidades:
+
+* UI não conhece banco
+* Domínio não conhece Flutter
+* Data implementa contratos
+* Projeto preparado para crescer
+
